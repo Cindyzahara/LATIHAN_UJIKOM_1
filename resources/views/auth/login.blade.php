@@ -10,9 +10,9 @@
             <div class="main-card-signin d-md-flex">
                 <div class="sign-up-body wd-md-500p">
                     <div class="main-signin-header">
-                        <h2>Selamat Datang</h2>
+                        <h2>WELCOME</h2>
                         <div class="px-0 col-12 mb-2">
-                           
+                            
                         </div>
                         <h6>Form Input Login</h6>
                         <form method="POST" action="{{ route('auth') }}">
