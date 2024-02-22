@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('nama_lengkap');
-            $table->text('alamat');
-            $table->enum('role', ['administrator', 'petugas', 'peminjam']);
-            $table->enum('verifikasi', ['belum', 'sudah']);
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('buku_id')->constrained('buku');
+            $table->date('tanggal_peminjaman');
+            $table->date('tanggal_pengembalian');
+            $table->string('status_peminjam');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('peminjaman');
     }
 };
