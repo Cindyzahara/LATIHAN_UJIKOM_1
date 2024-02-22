@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PenggunaController;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +14,13 @@ use App\Http\Controllers\PenggunaController;
 |
 */
 
-Route::get('/', function () {
-    return view('_template_back.layout');
-});
+// Route::get('/', function () {
+//     return view('_template_back.layout');
+// });
 
 Route::Resource('pengguna', PenggunaController::class);
+Route::get('/',[LoginController::class, 'login'])->name('login'); // ROUTE LOGIN
+Route::post('/auth', [LoginController::class, 'auth'])->name('auth'); // ROUTE UNTUK PROSES LOGIN
+Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi'); // ROUTE REGISTRASI
+Route::post('registrasi/auth', [LoginController::class, 'auth_regis'])->name('auth_regis'); // ROUTE PROSES REGISTRASI
+Route::get('/logout',[LoginController::class, 'logout'])->name('logout'); // ROUTE LOGOUT
