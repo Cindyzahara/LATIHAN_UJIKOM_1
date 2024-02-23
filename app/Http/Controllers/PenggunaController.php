@@ -34,7 +34,7 @@ class PenggunaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          //
     }
 
     /**

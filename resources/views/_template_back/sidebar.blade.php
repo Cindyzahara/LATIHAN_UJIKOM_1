@@ -78,7 +78,7 @@
 						</ul>
 						<ul class="side-menu ">
 							<li class="slide">
-								<a class="side-menu__item" href="index.html"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Data Peminjaman</span></a>
+								<a class="side-menu__item {{ request()->is('peminjam')? 'active' : '' }}" href="{{ route('peminjam.index') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Data Peminjaman</span></a>
 							</li>
 						</ul>
 						<ul class="side-menu ">
